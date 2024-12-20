@@ -10,35 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_12_20_030627) do
-
+ActiveRecord::Schema.define(version: 20_241_220_032_906) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "responses", force: :cascade do |t|
-    t.string "body"
-    t.integer "author_id"
-    t.integer "story_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'responses', force: :cascade do |t|
+    t.string 'body'
+    t.integer 'author_id'
+    t.integer 'story_id'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  create_table "stories", force: :cascade do |t|
-    t.string "title"
-    t.string "body"
-    t.integer "author_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'stories', force: :cascade do |t|
+    t.string 'title'
+    t.string 'body'
+    t.integer 'author_id'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "name"
-    t.string "email"
-    t.string "password_digest"
-    t.string "session_token"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'users', force: :cascade do |t|
+    t.string 'username', null: false
+    t.string 'name'
+    t.string 'email', null: false
+    t.string 'password_digest', null: false
+    t.string 'session_token', null: false
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
-
 end
