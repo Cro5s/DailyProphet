@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :set_current_user
   protect_from_forgery with: :exception
+  helper_method :set_current_user, :logged_in?
 
   def set_current_user
     return nil unless session[:session_token]
