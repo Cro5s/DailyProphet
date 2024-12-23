@@ -9,12 +9,14 @@ class User < ApplicationRecord
            primary_key: :id,
            foreign_key: :author_id,
            class_name: 'Story',
+           inverse_of: :author,
            dependent: :destroy
 
   has_many :responses,
            primary_key: :id,
            foreign_key: :author_id,
            class_name: 'Response',
+           inverse_of: :author,
            dependent: :destroy
 
   attr_reader :password
