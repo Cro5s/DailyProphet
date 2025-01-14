@@ -1,4 +1,4 @@
-class ResponsesController < ApplicationController
+class Api::ResponsesController < ApplicationController
   before_action :ensure_logged_in
 
   def index

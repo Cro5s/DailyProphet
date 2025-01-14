@@ -1,4 +1,4 @@
-class StoriesController < ApplicationController
+class Api::StoriesController < ApplicationController
   def index
     @stories = Story.includes(:author).all
 
